@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#040813">
+  <title>اطلب حسابًا بمواصفاتك | DOMA STORE</title>
+  <meta name="description" content="أرسل مواصفات وميزانية حساب PUBG MOBILE الذي تبحث عنه إلى DOMA STORE.">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="apple-touch-icon" href="assets/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Orbitron:wght@600;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container">
+    <header class="page-heading">
+      <h1 data-i18n="request_heading">اطلب حسابًا بمواصفاتك</h1>
+      <p data-i18n="request_step_1">أرسل المواصفات والميزانية.</p>
+    </header>
+
+    <div class="form-page-layout">
+      <section class="form-card">
+        <form id="request-form" novalidate>
+          <div class="form-grid two-col">
+            <div class="field">
+              <label for="request-name" data-i18n="full_name">الاسم بالكامل</label>
+              <input id="request-name" name="name" type="text" maxlength="80" autocomplete="name" required>
+            </div>
+
+            <div class="field">
+              <label for="request-phone" data-i18n="whatsapp_number">رقم واتساب</label>
+              <input id="request-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="24" required>
+            </div>
+
+            <div class="field">
+              <label for="request-min-budget" data-i18n="min_budget">أقل ميزانية</label>
+              <input id="request-min-budget" name="minBudget" type="number" min="0" step="1" inputmode="numeric" required>
+            </div>
+
+            <div class="field">
+              <label for="request-max-budget" data-i18n="max_budget">أعلى ميزانية</label>
+              <input id="request-max-budget" name="maxBudget" type="number" min="0" step="1" inputmode="numeric" required>
+            </div>
+
+            <div class="field">
+              <label for="request-currency" data-i18n="currency_label">العملة</label>
+              <select id="request-currency" name="currency">
+                <option value="EGP">EGP — ج.م</option>
+                <option value="USD">USD — $</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="request-tier" data-i18n="preferred_tier">الفئة المفضلة</label>
+              <select id="request-tier" name="tier">
+                <option value="" data-i18n="tier_any">أي فئة</option>
+                <option value="economy" data-i18n="tier_economy">اقتصادي</option>
+                <option value="mid" data-i18n="tier_mid">متوسط</option>
+                <option value="vip" data-i18n="tier_vip">VIP</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="request-level" data-i18n="minimum_level">أقل مستوى مطلوب</label>
+              <input id="request-level" name="minLevel" type="number" min="1" max="100" inputmode="numeric" placeholder="1">
+            </div>
+
+            <div class="field">
+              <label for="request-version" data-i18n="version">النسخة</label>
+              <select id="request-version" name="version">
+                <option value="" data-i18n="version_any">لا يهم</option>
+                <option value="global" data-i18n="global">عالمي</option>
+                <option value="korea" data-i18n="korea">كوري</option>
+              </select>
+            </div>
+          </div>
+
+          <fieldset class="filter-group" style="margin-top:18px">
+            <legend class="filter-title" data-i18n="must_have">المواصفات المطلوبة</legend>
+            <div class="check-row">
+              <label class="check-option"><input type="checkbox" name="specs" value="xsuit"><span data-i18n="xsuits">بدلات X-Suit</span></label>
+              <label class="check-option"><input type="checkbox" name="specs" value="mythic"><span data-i18n="mythics">أغراض ميثيك</span></label>
+              <label class="check-option"><input type="checkbox" name="specs" value="glacier_lab"><span data-i18n="glacier_lab">جليشر / أسلحة مطورة</span></label>
+              <label class="check-option"><input type="checkbox" name="specs" value="supercars"><span data-i18n="supercars">سيارات مميزة</span></label>
+              <label class="check-option"><input type="checkbox" name="specs" value="conqueror"><span data-i18n="conqueror">كونكر</span></label>
+              <label class="check-option"><input type="checkbox" name="specs" value="og"><span data-i18n="og">مواسم قديمة / OG</span></label>
+            </div>
+          </fieldset>
+
+          <div class="field" style="margin-top:18px">
+            <label for="request-notes" data-i18n="notes">ملاحظات</label>
+            <textarea id="request-notes" name="notes" maxlength="1500" rows="4"></textarea>
+          </div>
+
+          <div class="form-actions">
+            <button class="btn btn-primary" type="submit"><i data-lucide="send" aria-hidden="true"></i><span data-i18n="send_request">إرسال الطلب</span></button>
+          </div>
+          <div class="form-message-actions" id="request-message-actions" hidden>
+            <p class="small muted" data-i18n="message_opening">سيتم فتح واتساب لإرسال التفاصيل.</p>
+            <button class="btn btn-ice btn-sm" type="button" data-copy-form-message="request"><i data-lucide="file-text" aria-hidden="true"></i><span data-i18n="copy_message">نسخ الرسالة</span></button>
+            <a class="btn btn-telegram btn-sm" id="request-telegram-link" href="#" data-contact-telegram target="_blank" rel="noopener"><i data-lucide="send" aria-hidden="true"></i><span data-i18n="send_telegram">إرسال عبر تليجرام</span></a>
+          </div>
+        </form>
+      </section>
+
+      <aside class="side-info">
+        <h2 data-i18n="request_steps_title">خطوات طلب الحساب</h2>
+        <ol class="steps-list">
+          <li class="step-item"><span class="step-number">01</span><div><strong data-i18n="request_step_1">أرسل المواصفات والميزانية.</strong></div></li>
+          <li class="step-item"><span class="step-number">02</span><div><strong data-i18n="request_step_2">نبحث عن حساب مناسب ونتواصل معك.</strong></div></li>
+          <li class="step-item"><span class="step-number">03</span><div><strong data-i18n="request_step_3">راجع الفيديو والتفاصيل قبل الاتفاق.</strong></div></li>
+        </ol>
+        <hr class="divider">
+        <div class="summary-actions">
+          <a class="btn btn-whatsapp btn-block" href="#" data-contact-whatsapp target="_blank" rel="noopener"><i data-lucide="message-circle" aria-hidden="true"></i>WhatsApp</a>
+          <a class="btn btn-telegram btn-block" href="#" data-contact-telegram target="_blank" rel="noopener"><i data-lucide="send" aria-hidden="true"></i>Telegram</a>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="data/accounts.js"></script>
+  <script src="data/reviews.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/forms.js"></script>
+</body>
+</html>

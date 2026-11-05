@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#040813">
+  <title>الحسابات | DOMA STORE</title>
+  <meta name="description" content="تصفح حسابات PUBG MOBILE في DOMA STORE واستخدم الفلاتر للعثور على المواصفات المناسبة.">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="apple-touch-icon" href="assets/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Orbitron:wght@600;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container">
+    <header class="page-heading">
+      <h1 data-i18n="store_heading">حسابات ببجي موبايل</h1>
+      <p data-i18n="store_intro">ابحث عن الحساب المناسب لك، واستخدم الفلاتر للوصول إلى المواصفات المطلوبة.</p>
+    </header>
+
+    <div class="store-layout">
+      <aside class="filters-sidebar" aria-label="Account filters">
+        <div id="desktop-filters"></div>
+      </aside>
+
+      <section class="store-main" aria-label="Account listings">
+        <div class="toolbar">
+          <label class="search-box">
+            <i data-lucide="search" aria-hidden="true"></i>
+            <input id="store-search" type="search" autocomplete="off" data-i18n-placeholder="search_placeholder" placeholder="ابحث بالرقم أو الاسم أو المواصفات..." aria-label="Search accounts">
+          </label>
+          <label class="sr-only" for="store-sort" data-i18n="sort">ترتيب حسب</label>
+          <select id="store-sort" aria-label="Sort accounts">
+            <option value="newest" data-i18n="sort_newest">الأحدث</option>
+            <option value="price-asc" data-i18n="sort_price_low">السعر: من الأقل للأعلى</option>
+            <option value="price-desc" data-i18n="sort_price_high">السعر: من الأعلى للأقل</option>
+            <option value="level" data-i18n="sort_level">أعلى مستوى</option>
+            <option value="mythics" data-i18n="sort_mythics">الأكثر ميثيك</option>
+          </select>
+          <button class="btn btn-ghost btn-sm filter-open-btn" id="open-filters" type="button">
+            <i data-lucide="sliders-horizontal" aria-hidden="true"></i><span data-i18n="filter">الفلاتر</span>
+          </button>
+          <span class="result-count" id="store-result-count" aria-live="polite"></span>
+        </div>
+
+        <div class="active-filters" id="active-filters" aria-live="polite"></div>
+        <div class="account-grid" id="store-account-grid" aria-live="polite"></div>
+        <div class="empty-state" id="store-empty" hidden>
+          <i data-lucide="search" aria-hidden="true"></i>
+          <h2 data-i18n="no_results">لا توجد حسابات مطابقة</h2>
+          <p data-i18n="no_results_text">جرّب تغيير الفلاتر أو اطلب حسابًا بالمواصفات التي تريدها.</p>
+          <a class="btn btn-primary" href="request.html" data-i18n="request_this">اطلب هذا الحساب</a>
+        </div>
+        <div class="pagination" id="store-pagination"></div>
+      </section>
+    </div>
+  </main>
+
+  <div class="drawer-overlay" id="filter-overlay" hidden></div>
+  <section class="filter-sheet" id="filter-sheet" aria-label="Mobile filters" aria-modal="true" role="dialog" aria-hidden="true">
+    <div class="filter-sheet-head">
+      <h2 class="mb-0" data-i18n="filters">الفلاتر</h2>
+      <button class="icon-btn" type="button" id="close-filters" aria-label="Close filters"><i data-lucide="x" aria-hidden="true"></i></button>
+    </div>
+    <div id="mobile-filters"></div>
+    <div class="filter-sheet-actions">
+      <button class="btn btn-ghost" type="button" id="mobile-reset"><i data-lucide="rotate-ccw" aria-hidden="true"></i><span data-i18n="reset">إعادة ضبط</span></button>
+      <button class="btn btn-primary" type="button" id="apply-filters"><span data-i18n="apply">تطبيق</span></button>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="data/accounts.js"></script>
+  <script src="data/reviews.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/store.js"></script>
+</body>
+</html>

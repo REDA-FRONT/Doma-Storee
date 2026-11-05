@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#040813">
+  <title>اعرض حسابك للبيع | DOMA STORE</title>
+  <meta name="description" content="أرسل مواصفات حساب PUBG MOBILE الذي ترغب في عرضه للبيع إلى DOMA STORE.">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="apple-touch-icon" href="assets/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Orbitron:wght@600;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container">
+    <header class="page-heading">
+      <h1 data-i18n="sell_heading">اعرض حسابك للبيع</h1>
+      <p data-i18n="sell_step_1">أرسل تفاصيل الحساب ورابط العرض.</p>
+    </header>
+
+    <div class="form-page-layout">
+      <section class="form-card">
+        <form id="sell-form" novalidate>
+          <div class="form-grid two-col">
+            <div class="field">
+              <label for="sell-name" data-i18n="full_name">الاسم بالكامل</label>
+              <input id="sell-name" name="name" type="text" maxlength="80" autocomplete="name" required>
+            </div>
+
+            <div class="field">
+              <label for="sell-phone" data-i18n="whatsapp_number">رقم واتساب</label>
+              <input id="sell-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="24" required>
+            </div>
+
+            <div class="field">
+              <label for="sell-level" data-i18n="current_level">المستوى الحالي</label>
+              <input id="sell-level" name="level" type="number" min="1" max="100" inputmode="numeric" required>
+            </div>
+
+            <div class="field">
+              <label for="sell-rank" data-i18n="rank">الرتبة</label>
+              <select id="sell-rank" name="rank" required>
+                <option value="" disabled selected>—</option>
+                <option value="Bronze" data-i18n="rank_bronze">Bronze</option><option value="Silver" data-i18n="rank_silver">Silver</option><option value="Gold" data-i18n="rank_gold">Gold</option>
+                <option value="Platinum" data-i18n="rank_platinum">Platinum</option><option value="Diamond" data-i18n="rank_diamond">Diamond</option><option value="Crown" data-i18n="rank_crown">Crown</option>
+                <option value="Ace" data-i18n="rank_ace">Ace</option><option value="Ace Master" data-i18n="rank_ace_master">Ace Master</option><option value="Ace Dominator" data-i18n="rank_ace_dominator">Ace Dominator</option><option value="Conqueror" data-i18n="rank_conqueror">Conqueror</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="sell-mythics" data-i18n="mythic_count">عدد أغراض الميثيك</label>
+              <input id="sell-mythics" name="mythics" type="number" min="0" max="1000" inputmode="numeric" value="0" required>
+            </div>
+
+            <div class="field">
+              <label for="sell-xsuits" data-i18n="xsuit_count">عدد بدلات X-Suit</label>
+              <input id="sell-xsuits" name="xsuits" type="number" min="0" max="50" inputmode="numeric" value="0" required>
+            </div>
+
+            <div class="field">
+              <label for="sell-platform" data-i18n="linked_platform">منصة الربط</label>
+              <select id="sell-platform" name="platform" required>
+                <option value="" disabled selected>—</option>
+                <option value="facebook" data-i18n="facebook">فيسبوك</option>
+                <option value="twitter" data-i18n="twitter">تويتر</option>
+                <option value="google" data-i18n="google">جوجل</option>
+                <option value="gmail" data-i18n="gmail">جيميل</option>
+                <option value="other" data-i18n="other">أخرى</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="sell-price" data-i18n="expected_price">السعر المتوقع (اختياري)</label>
+              <input id="sell-price" name="price" type="number" min="0" step="1" inputmode="numeric">
+            </div>
+          </div>
+
+          <div class="field" style="margin-top:18px">
+            <label for="sell-items" data-i18n="key_items">أهم العناصر في الحساب</label>
+            <textarea id="sell-items" name="items" rows="4" maxlength="1500" required></textarea>
+          </div>
+
+          <div class="field" style="margin-top:18px">
+            <label for="sell-video" data-i18n="video_link">رابط فيديو أو صور الحساب</label>
+            <input id="sell-video" name="video" type="url" inputmode="url" placeholder="https://...">
+            <span class="field-hint">YouTube / Google Drive / Telegram</span>
+          </div>
+
+          <div class="safety-note" style="margin-top:18px">
+            <i data-lucide="shield-check" aria-hidden="true"></i>
+            <span data-i18n="safety_password">لا ترسل كلمة المرور هنا. نطلب بيانات الدخول فقط بعد الاتفاق على الصفقة داخل المحادثة.</span>
+          </div>
+
+          <div class="form-actions">
+            <button class="btn btn-primary" type="submit"><i data-lucide="send" aria-hidden="true"></i><span data-i18n="sell_submit">إرسال بيانات الحساب</span></button>
+          </div>
+          <div class="form-message-actions" id="sell-message-actions" hidden>
+            <p class="small muted" data-i18n="message_opening">سيتم فتح واتساب لإرسال التفاصيل.</p>
+            <button class="btn btn-ice btn-sm" type="button" data-copy-form-message="sell"><i data-lucide="file-text" aria-hidden="true"></i><span data-i18n="copy_message">نسخ الرسالة</span></button>
+            <a class="btn btn-telegram btn-sm" id="sell-telegram-link" href="#" data-contact-telegram target="_blank" rel="noopener"><i data-lucide="send" aria-hidden="true"></i><span data-i18n="send_telegram">إرسال عبر تليجرام</span></a>
+          </div>
+        </form>
+      </section>
+
+      <aside class="side-info">
+        <h2 data-i18n="sell_steps_title">كيف تتم عملية البيع؟</h2>
+        <ol class="steps-list">
+          <li class="step-item"><span class="step-number">01</span><div><strong data-i18n="sell_step_1">أرسل تفاصيل الحساب ورابط العرض.</strong></div></li>
+          <li class="step-item"><span class="step-number">02</span><div><strong data-i18n="sell_step_2">نراجع البيانات ونتواصل معك بعرض.</strong></div></li>
+          <li class="step-item"><span class="step-number">03</span><div><strong data-i18n="sell_step_3">يتم الاتفاق ثم تنفيذ التسليم بشكل واضح.</strong></div></li>
+        </ol>
+        <hr class="divider">
+        <div class="safety-note">
+          <i data-lucide="lock" aria-hidden="true"></i>
+          <span data-i18n="safety_password">لا ترسل كلمة المرور هنا. نطلب بيانات الدخول فقط بعد الاتفاق على الصفقة داخل المحادثة.</span>
+        </div>
+        <div class="summary-actions">
+          <a class="btn btn-whatsapp btn-block" href="#" data-contact-whatsapp target="_blank" rel="noopener"><i data-lucide="message-circle" aria-hidden="true"></i>WhatsApp</a>
+          <a class="btn btn-telegram btn-block" href="#" data-contact-telegram target="_blank" rel="noopener"><i data-lucide="send" aria-hidden="true"></i>Telegram</a>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="data/accounts.js"></script>
+  <script src="data/reviews.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/forms.js"></script>
+</body>
+</html>
